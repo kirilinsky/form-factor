@@ -1,7 +1,6 @@
 "use client";
 
 import { DynamicForm } from "@/components/dynamic-form/dynamic-form";
-import { FormFactor } from "@/components/form-factor/form-factor";
 import { FormConfig } from "@/lib/types/form";
 import { useEffect, useState } from "react";
 
@@ -48,14 +47,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 py-12 px-4 flex justify-center items-start">
       <div className="w-full max-w-2xl flex flex-col gap-y-8">
-        {/* Заголовок теперь отделен через gap-y-8 от формы */}
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 block">
-            Research Project Registration
+            Form based on configuration from API call
           </h1>
-          <p className="text-slate-500 mt-2">
-            Please fill in the details below.
-          </p>
+          <p className="text-slate-500 mt-2">You can check the network</p>
         </div>
 
         <section className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm">

@@ -16,7 +16,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Spinner } from "@/components/ui/spinner";
 import { FieldConfig, FieldOption } from "@/lib/types/form";
+import { fetchFieldOptions } from "@/lib/fetch-select-options/fetch-select-options";
 
 export function SelectField({ field }: { field: FieldConfig }) {
   const { control } = useFormContext();
@@ -24,31 +26,25 @@ export function SelectField({ field }: { field: FieldConfig }) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Check if API source is required
-    if (field.useSource && field.source.type === "api" && field.source.url) {
-      const fetchOptions = async () => {
+    const shouldFetch =
+      field.useSource && field.source.type === "api" && field.source.url;
+
+    if (shouldFetch) {
+      const loadData = async () => {
         setIsLoading(true);
         try {
-          const response = await fetch(field.source.url!);
-          if (!response.ok) throw new Error("API request failed");
-          const data = await response.json();
-
-          // Map API response to standard FieldOption format
-          const formattedOptions: FieldOption[] = data.map((item: any) => ({
-            label: item.name || item.label || "Unknown",
-            value: String(item.id || item.value || ""),
-          }));
-
-          setOptions(formattedOptions);
+          const data = await fetchFieldOptions(field);
+          setOptions(data);
         } catch (error) {
-          console.error("SelectField fetch error:", error);
+          console.error("SelectField load error:", error);
         } finally {
           setIsLoading(false);
         }
       };
-      fetchOptions();
+
+      loadData();
     }
-  }, [field.useSource, field.source]);
+  }, [field]); // Dependency on the whole field config
 
   return (
     <Controller
@@ -70,27 +66,26 @@ export function SelectField({ field }: { field: FieldConfig }) {
               disabled={!field.editable || isLoading}
             >
               <SelectTrigger id={field.id} className="w-full">
-                <SelectValue
-                  placeholder={
-                    isLoading ? "Loading data..." : field.placeholder
-                  }
-                />
+                <div className="flex items-center gap-2">
+                  {isLoading && (
+                    <Spinner className="h-4 w-4 text-muted-foreground" />
+                  )}
+                  <SelectValue
+                    placeholder={
+                      isLoading ? "Loading data..." : field.placeholder
+                    }
+                  />
+                </div>
               </SelectTrigger>
 
               <SelectContent position="popper">
                 <SelectGroup>
-                  {isLoading ? (
-                    <div className="flex items-center justify-center p-6 text-sm text-muted-foreground">
-                      <div className="animate-spin mr-3 h-4 w-4 border-b-2 border-primary rounded-full" />
-                      Fetching list...
-                    </div>
-                  ) : (
+                  {!isLoading &&
                     options.map((option) => (
                       <SelectItem key={option.value} value={option.value}>
                         {option.label}
                       </SelectItem>
-                    ))
-                  )}
+                    ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
