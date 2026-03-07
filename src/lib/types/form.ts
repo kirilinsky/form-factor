@@ -4,7 +4,8 @@ export type FieldType =
   | "select"
   | "number"
   | "checkbox"
-  | "tel";
+  | "tel"
+  | "textarea";
 
 export type DataSourceType = "static" | "api";
 
@@ -36,11 +37,10 @@ export interface FieldConfig {
   label: string;
   type: FieldType;
   placeholder: string;
-  defaultValue: any;
+  defaultValue: string | null;
   visible: boolean;
   editable: boolean;
-  focusable: boolean;
-  useSource: boolean
+  useSource: boolean;
   inputMode:
     | "text"
     | "decimal"
@@ -51,7 +51,7 @@ export interface FieldConfig {
     | "url";
   options: FieldOption[];
   source: FieldSource;
-
+  mask: string | null;
   validation: ValidationConfig;
   accessibility: AccessibilityConfig;
 }

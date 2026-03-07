@@ -3,6 +3,34 @@
     "formTitle": "Form Debug Mode",
     "fields": [
         {
+            "id": "f-9",
+            "name": "zipCode",
+            "label": "ZIP Code (Mask Test)",
+            "type": "text",
+            "placeholder": "000 000",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true, 
+            "inputMode": "numeric",
+            "options": [],
+            "useSource": false,
+            "mask": "### ###",
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true,
+                "min": 6,
+                "max": 6,
+                "regex": "^[0-9]{6}$",
+                "regexError": "ZIP code must be exactly 6 digits"
+            },
+            "accessibility": {
+                "ariaLabel": "Zip code with mask"
+            }
+        },
+        {
             "id": "f-1",
             "name": "textEnabled",
             "label": "Text Input (Enabled)",
@@ -10,8 +38,7 @@
             "placeholder": "Type something...",
             "defaultValue": "",
             "visible": true,
-            "editable": true,
-            "focusable": true,
+            "editable": true, 
             "inputMode": "text",
             "options": [],
             "useSource": false,
@@ -37,8 +64,7 @@
             "placeholder": "You can't edit this",
             "defaultValue": "Locked Value",
             "visible": true,
-            "editable": false,
-            "focusable": false,
+            "editable": false, 
             "inputMode": "text",
             "options": [],
             "useSource": false,
@@ -61,8 +87,7 @@
             "placeholder": "Choose from API...",
             "defaultValue": "",
             "visible": true,
-            "editable": true,
-            "focusable": true,
+            "editable": true, 
             "inputMode": "text",
             "options": [],
             "useSource": true,
@@ -83,10 +108,9 @@
             "label": "Select (Static Options)",
             "type": "select",
             "placeholder": "Choose status...",
-            "defaultValue": "active",
+            "defaultValue": null,
             "visible": true,
-            "editable": true,
-            "focusable": true,
+            "editable": true, 
             "inputMode": "text",
             "options": [
                 {
@@ -118,8 +142,7 @@
             "placeholder": "Disabled select",
             "defaultValue": "val-1",
             "visible": true,
-            "editable": false,
-            "focusable": false,
+            "editable": false, 
             "inputMode": "text",
             "options": [
                 {
@@ -146,8 +169,7 @@
             "type": "checkbox",
             "defaultValue": false,
             "visible": true,
-            "editable": true,
-            "focusable": true,
+            "editable": true, 
             "inputMode": "text",
             "options": [],
             "useSource": false,
@@ -169,8 +191,7 @@
             "type": "checkbox",
             "defaultValue": true,
             "visible": true,
-            "editable": true,
-            "focusable": true,
+            "editable": true, 
             "inputMode": "text",
             "options": [],
             "useSource": false,
@@ -192,8 +213,7 @@
             "type": "checkbox",
             "defaultValue": true,
             "visible": true,
-            "editable": false,
-            "focusable": false,
+            "editable": false, 
             "inputMode": "text",
             "options": [],
             "useSource": false,
@@ -206,6 +226,32 @@
             },
             "accessibility": {
                 "ariaLabel": "Disabled checkbox"
+            }
+        },
+        {
+            "id": "f-10",
+            "name": "projectDescription",
+            "label": "Textarea",
+            "type": "textarea",
+            "placeholder": "Some text for text area",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true, 
+            "inputMode": "text",
+            "options": [],
+            "useSource": false,
+            "mask": null,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true,
+                "min": 20,
+                "max": 500
+            },
+            "accessibility": {
+                "ariaLabel": "Long description of the project"
             }
         }
     ]
