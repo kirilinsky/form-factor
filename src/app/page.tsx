@@ -88,6 +88,13 @@ export default function Home() {
             >
               <Link href="/about">About</Link>
             </Button>
+            <Button
+              variant="outline"
+              asChild
+              className="rounded-full px-5 font-semibold transition-all hover:bg-muted"
+            >
+              <Link href="/example">JSON example</Link>
+            </Button>
 
             <ThemeSwitch />
           </div>
