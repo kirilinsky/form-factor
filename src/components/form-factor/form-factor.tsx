@@ -1,0 +1,29 @@
+import { FieldConfig } from "@/lib/types/form";
+import { TextField } from "../ui/text-field/text-field";
+import { SelectField } from "../ui/select-field/select-field";
+import { CheckboxField } from "../ui/checkbox-field/checkbox-filed";
+
+interface FormFactorProps {
+  field: FieldConfig;
+}
+
+export const FormFactor = ({ field }: FormFactorProps) => {
+  if (!field.visible) return null;
+
+  switch (field.type) {
+    case "text":
+    case "email":
+    case "number":
+    case "tel":
+      return <TextField />;
+
+    case "select":
+      return <SelectField />;
+
+    case "checkbox":
+      return <CheckboxField />;
+
+    default:
+      return <div>Unknown field type: {field.type}</div>;
+  }
+};

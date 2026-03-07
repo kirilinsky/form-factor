@@ -1,0 +1,76 @@
+{
+    "formId": "research-submission-v1",
+    "formTitle": "Research Project Registration",
+    "fields": [
+        {
+            "id": "res-1",
+            "name": "projectTitle",
+            "label": "Project Title",
+            "type": "text",
+            "placeholder": "e.g. Quantum Computing",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [],
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true,
+                "min": 5,
+                "regex": "^[a-zA-Z0-9\\s]+$",
+                "regexError": "Only letters and numbers allowed"
+            },
+            "accessibility": {
+                "ariaLabel": "Project title input"
+            }
+        },
+        {
+            "id": "res-2",
+            "name": "discipline",
+            "label": "Scientific Discipline",
+            "type": "select",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [],
+            "source": {
+                "type": "api",
+                "url": "/api/disciplines"
+            },
+            "validation": {
+                "required": true
+            },
+            "accessibility": {
+                "ariaLabel": "Select scientific area"
+            }
+        },
+        {
+            "id": "res-3",
+            "name": "isPublic",
+            "label": "Make project public",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [],
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": false
+            },
+            "accessibility": {
+                "ariaLabel": "Privacy toggle"
+            }
+        }
+    ]
+}

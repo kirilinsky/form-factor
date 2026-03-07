@@ -1,0 +1,22 @@
+[
+    {
+        "label": "Quantum Physics",
+        "value": "quantum_physics"
+    },
+    {
+        "label": "Molecular Biology",
+        "value": "mol_biology"
+    },
+    {
+        "label": "Artificial Intelligence",
+        "value": "ai"
+    },
+    {
+        "label": "Astrophysics",
+        "value": "astrophysics"
+    },
+    {
+        "label": "Renewable Energy",
+        "value": "renewable_energy"
+    }
+]
