@@ -1,7 +1,7 @@
 "use client";
 
 import { FormFactor } from "@/components/form-factor/form-factor";
-import { FormWrap } from "@/components/ui/form-wrap/form-wrap";
+import { FormWrap } from "@/components/custom/form-wrap/form-wrap";
 import { FormConfig } from "@/lib/types/form";
 import { useEffect, useState } from "react";
 

@@ -1,7 +1,7 @@
 import { FieldConfig } from "@/lib/types/form";
-import { TextField } from "../ui/text-field/text-field";
-import { SelectField } from "../ui/select-field/select-field";
-import { CheckboxField } from "../ui/checkbox-field/checkbox-filed";
+import { TextField } from "../custom/text-field/text-field";
+import { SelectField } from "../custom/select-field/select-field";
+import { CheckboxField } from "../custom/checkbox-field/checkbox-filed";
 
 interface FormFactorProps {
   field: FieldConfig;
