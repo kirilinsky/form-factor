@@ -40,7 +40,7 @@ export interface FieldConfig {
   visible: boolean;
   editable: boolean;
   focusable: boolean;
-
+  useSource: boolean
   inputMode:
     | "text"
     | "decimal"

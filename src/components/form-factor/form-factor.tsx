@@ -15,13 +15,13 @@ export const FormFactor = ({ field }: FormFactorProps) => {
     case "email":
     case "number":
     case "tel":
-      return <TextField />;
+      return <TextField field={field} />;
 
     case "select":
-      return <SelectField />;
+      return <SelectField  field={field} />;
 
     case "checkbox":
-      return <CheckboxField />;
+      return <CheckboxField field={field} />;
 
     default:
       return <div>Unknown field type: {field.type}</div>;

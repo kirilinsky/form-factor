@@ -1,66 +1,47 @@
 {
-    "formId": "research-submission-v1",
-    "formTitle": "Research Project Registration",
+    "formId": "debug-form-v1",
+    "formTitle": "Form Debug Mode",
     "fields": [
         {
-            "id": "res-1",
-            "name": "projectTitle",
-            "label": "Project Title",
+            "id": "f-1",
+            "name": "textEnabled",
+            "label": "Text Input (Enabled)",
             "type": "text",
-            "placeholder": "e.g. Quantum Computing",
+            "placeholder": "Type something...",
             "defaultValue": "",
             "visible": true,
             "editable": true,
             "focusable": true,
             "inputMode": "text",
             "options": [],
+            "useSource": false,
             "source": {
                 "type": "static",
                 "url": null
             },
             "validation": {
                 "required": true,
-                "min": 5,
-                "regex": "^[a-zA-Z0-9\\s]+$",
-                "regexError": "Only letters and numbers allowed"
+                "min": 3,
+                "regex": "^[a-zA-Z]+$",
+                "regexError": "Only letters allowed"
             },
             "accessibility": {
-                "ariaLabel": "Project title input"
+                "ariaLabel": "Text input"
             }
         },
         {
-            "id": "res-2",
-            "name": "discipline",
-            "label": "Scientific Discipline",
-            "type": "select",
-            "defaultValue": "",
+            "id": "f-2",
+            "name": "textDisabled",
+            "label": "Text Input (Disabled)",
+            "type": "text",
+            "placeholder": "You can't edit this",
+            "defaultValue": "Locked Value",
             "visible": true,
-            "editable": true,
-            "focusable": true,
+            "editable": false,
+            "focusable": false,
             "inputMode": "text",
             "options": [],
-            "source": {
-                "type": "api",
-                "url": "/api/disciplines"
-            },
-            "validation": {
-                "required": true
-            },
-            "accessibility": {
-                "ariaLabel": "Select scientific area"
-            }
-        },
-        {
-            "id": "res-3",
-            "name": "isPublic",
-            "label": "Make project public",
-            "type": "checkbox",
-            "defaultValue": false,
-            "visible": true,
-            "editable": true,
-            "focusable": true,
-            "inputMode": "text",
-            "options": [],
+            "useSource": false,
             "source": {
                 "type": "static",
                 "url": null
@@ -69,7 +50,162 @@
                 "required": false
             },
             "accessibility": {
-                "ariaLabel": "Privacy toggle"
+                "ariaLabel": "Disabled input"
+            }
+        },
+        {
+            "id": "f-3",
+            "name": "selectApi",
+            "label": "Select (API / useSource: true)",
+            "type": "select",
+            "placeholder": "Choose from API...",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [],
+            "useSource": true,
+            "source": {
+                "type": "api",
+                "url": "/api/disciplines"
+            },
+            "validation": {
+                "required": true
+            },
+            "accessibility": {
+                "ariaLabel": "API Select"
+            }
+        },
+        {
+            "id": "f-4",
+            "name": "selectStatic",
+            "label": "Select (Static Options)",
+            "type": "select",
+            "placeholder": "Choose status...",
+            "defaultValue": "active",
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [
+                {
+                    "label": "Active",
+                    "value": "active"
+                },
+                {
+                    "label": "Inactive",
+                    "value": "inactive"
+                }
+            ],
+            "useSource": false,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true
+            },
+            "accessibility": {
+                "ariaLabel": "Static Select"
+            }
+        },
+        {
+            "id": "f-5",
+            "name": "selectDisabled",
+            "label": "Select (Disabled)",
+            "type": "select",
+            "placeholder": "Disabled select",
+            "defaultValue": "val-1",
+            "visible": true,
+            "editable": false,
+            "focusable": false,
+            "inputMode": "text",
+            "options": [
+                {
+                    "label": "Fixed Value",
+                    "value": "val-1"
+                }
+            ],
+            "useSource": false,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": false
+            },
+            "accessibility": {
+                "ariaLabel": "Disabled select"
+            }
+        },
+        {
+            "id": "f-6",
+            "name": "checkboxDefault",
+            "label": "Checkbox (Default False)",
+            "type": "checkbox",
+            "defaultValue": false,
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [],
+            "useSource": false,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": false
+            },
+            "accessibility": {
+                "ariaLabel": "Toggle default"
+            }
+        },
+        {
+            "id": "f-7",
+            "name": "checkboxChecked",
+            "label": "Checkbox (Default True)",
+            "type": "checkbox",
+            "defaultValue": true,
+            "visible": true,
+            "editable": true,
+            "focusable": true,
+            "inputMode": "text",
+            "options": [],
+            "useSource": false,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": false
+            },
+            "accessibility": {
+                "ariaLabel": "Toggle checked"
+            }
+        },
+        {
+            "id": "f-8",
+            "name": "checkboxDisabled",
+            "label": "Checkbox (Disabled)",
+            "type": "checkbox",
+            "defaultValue": true,
+            "visible": true,
+            "editable": false,
+            "focusable": false,
+            "inputMode": "text",
+            "options": [],
+            "useSource": false,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": false
+            },
+            "accessibility": {
+                "ariaLabel": "Disabled checkbox"
             }
         }
     ]
