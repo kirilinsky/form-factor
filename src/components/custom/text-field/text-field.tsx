@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import {
   Field,
   FieldContent,
+  FieldDescription,
   FieldError,
   FieldLabel,
 } from "@/components/ui/field";
@@ -22,7 +23,9 @@ export function TextField({ field }: { field: FieldConfig }) {
         <Field data-invalid={fieldState.invalid}>
           <FieldContent>
             <FieldLabel htmlFor={field.id}>{field.label}</FieldLabel>
-
+            {field.helperText && (
+              <FieldDescription>{field.helperText}</FieldDescription>
+            )}
             {field.mask ? (
               <PatternFormat
                 {...rhfField}

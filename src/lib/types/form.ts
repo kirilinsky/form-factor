@@ -5,7 +5,8 @@ export type FieldType =
   | "number"
   | "checkbox"
   | "tel"
-  | "textarea";
+  | "textarea"
+  | "switch";
 
 export type DataSourceType = "static" | "api";
 
@@ -41,6 +42,9 @@ export interface FieldConfig {
   visible: boolean;
   editable: boolean;
   useSource: boolean;
+  helperText: string | null;
+  labelOn: string | null;
+  labelOff: string | null;
   inputMode:
     | "text"
     | "decimal"

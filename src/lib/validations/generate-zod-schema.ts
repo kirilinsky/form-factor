@@ -7,7 +7,7 @@ export function generateZodSchema(config: FormConfig) {
   config.fields.forEach((field) => {
     let shape;
 
-    if (field.type === "checkbox") {
+    if (field.type === "checkbox" || field.type === "switch") {
       shape = z.boolean();
     } else {
       shape = z.string();

@@ -3,6 +3,7 @@ import { TextField } from "../custom/text-field/text-field";
 import { SelectField } from "../custom/select-field/select-field";
 import { CheckboxField } from "../custom/checkbox-field/checkbox-filed";
 import { TextareaField } from "../custom/textarea-field/textarea-field";
+import { SwitchField } from "../custom/switch-field/switch-field";
 
 interface FormFactorProps {
   field: FieldConfig;
@@ -17,6 +18,8 @@ export const FormFactor = ({ field }: FormFactorProps) => {
     case "number":
     case "tel":
       return <TextField field={field} />;
+    case "switch":
+      return <SwitchField field={field} />;
     case "select":
       return <SelectField field={field} />;
     case "checkbox":
