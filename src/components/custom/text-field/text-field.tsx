@@ -15,6 +15,9 @@ import { FieldConfig } from "@/lib/types/form";
 export function TextField({ field }: { field: FieldConfig }) {
   const { control } = useFormContext();
 
+  const descriptionId = `${field.id}-description`;
+  const errorId = `${field.id}-error`;
+
   return (
     <Controller
       name={field.name}
@@ -23,34 +26,53 @@ export function TextField({ field }: { field: FieldConfig }) {
         <Field data-invalid={fieldState.invalid}>
           <FieldContent>
             <FieldLabel htmlFor={field.id}>{field.label}</FieldLabel>
+
             {field.helperText && (
-              <FieldDescription>{field.helperText}</FieldDescription>
+              <FieldDescription id={descriptionId}>
+                {field.helperText}
+              </FieldDescription>
             )}
+
             {field.mask ? (
               <PatternFormat
                 {...rhfField}
+                id={field.id}
                 format={field.mask}
                 mask="_"
                 value={value}
-                onValueChange={(values) => {
-                  onChange(values.value);
-                }}
+                onValueChange={(values) => onChange(values.value)}
                 customInput={Input}
                 placeholder={field.placeholder}
                 disabled={!field.editable}
+                aria-invalid={fieldState.invalid}
+                aria-describedby={
+                  fieldState.invalid
+                    ? `${descriptionId} ${errorId}`
+                    : descriptionId
+                }
               />
             ) : (
               <Input
                 {...rhfField}
-                value={value}
+                id={field.id}
+                value={value ?? ""}
                 onChange={onChange}
                 placeholder={field.placeholder}
                 disabled={!field.editable}
                 type={field.type}
+                aria-invalid={fieldState.invalid}
+                aria-describedby={
+                  fieldState.invalid
+                    ? `${descriptionId} ${errorId}`
+                    : descriptionId
+                }
               />
             )}
           </FieldContent>
-          {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+
+          {fieldState.invalid && (
+            <FieldError id={errorId} errors={[fieldState.error]} />
+          )}
         </Field>
       )}
     />
