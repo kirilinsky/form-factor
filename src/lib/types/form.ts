@@ -58,6 +58,8 @@ export interface FieldConfig {
   mask: string | null;
   validation: ValidationConfig;
   accessibility: AccessibilityConfig;
+  column: number;
+  offset: "left" | "right" | null;
 }
 
 export interface FormConfig {

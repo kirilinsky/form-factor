@@ -31,7 +31,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Zip code with mask"
-            }
+            },
+            "column": 2,
+            "offset": null
         },
         {
             "id": "f-1",
@@ -60,7 +62,40 @@
             },
             "accessibility": {
                 "ariaLabel": "Text input"
-            }
+            },
+            "column": 1,
+            "offset": null
+        },
+        {
+            "id": "f-12",
+            "name": "textEnabled2",
+            "label": "Text Input with left offset",
+            "type": "text",
+            "placeholder": "Type something...",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true,
+            "inputMode": "text",
+            "options": [],
+            "useSource": false,
+            "helperText": "Some optional helper text...",
+            "labelOn": null,
+            "labelOff": null,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true,
+                "min": 3,
+                "regex": "^[a-zA-Z]+$",
+                "regexError": "Only letters allowed"
+            },
+            "accessibility": {
+                "ariaLabel": "Text input"
+            },
+            "column": 2,
+            "offset": "left"
         },
         {
             "id": "f-2",
@@ -86,7 +121,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Disabled input"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-3",
@@ -112,7 +149,9 @@
             },
             "accessibility": {
                 "ariaLabel": "API Select"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-4",
@@ -147,7 +186,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Static Select"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-5",
@@ -178,7 +219,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Disabled select"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-6",
@@ -203,7 +246,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Toggle default"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-7",
@@ -228,7 +273,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Toggle checked"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-8",
@@ -253,7 +300,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Disabled checkbox"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "f-10",
@@ -282,7 +331,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Long description of the project"
-            }
+            },
+            "column": 2,
+            "offset": null
         },
         {
             "id": "sw-1",
@@ -306,7 +357,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Toggle notifications"
-            }
+            },
+            "column": 1,
+            "offset": null
         },
         {
             "id": "sw-2",
@@ -330,7 +383,9 @@
             },
             "accessibility": {
                 "ariaLabel": "Toggle privacy"
-            }
+            },
+            "column": 1,
+            "offset": null
         }
     ]
 }
