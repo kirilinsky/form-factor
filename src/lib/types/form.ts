@@ -23,8 +23,11 @@ export interface FieldSource {
 
 export interface ValidationConfig {
   required: boolean;
+  requiredError?: string;
   min?: number;
+  minError?: string;
   max?: number;
+  maxError?: string;
   regex?: string;
   regexError?: string;
 }

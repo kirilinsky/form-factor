@@ -24,10 +24,11 @@
             },
             "validation": {
                 "required": true,
+                "requiredError": "ZIP code is required to proceed",
                 "min": 6,
-                "max": 6,
+                "minError": "ZIP code must be at least 6 characters",
                 "regex": "^[0-9]{6}$",
-                "regexError": "ZIP code must be exactly 6 digits"
+                "regexError": "ZIP code must be exactly 6 digits (e.g., 110000)"
             },
             "accessibility": {
                 "ariaLabel": "Zip code with mask"
@@ -56,7 +57,7 @@
             },
             "validation": {
                 "required": true,
-                "min": 3,
+                "min": 1,
                 "regex": "^[a-zA-Z]+$",
                 "regexError": "Only letters allowed"
             },
@@ -87,9 +88,11 @@
             },
             "validation": {
                 "required": true,
+                "requiredError": "This value is required to register",
                 "min": 3,
+                "minError": "Value must be at least 3 characters long",
                 "regex": "^[a-zA-Z]+$",
-                "regexError": "Only letters allowed"
+                "regexError": "Only letters allowed (no numbers or symbols)"
             },
             "accessibility": {
                 "ariaLabel": "Text input"
@@ -372,16 +375,16 @@
         {
             "id": "f-10",
             "name": "projectDescription",
-            "label": "Textarea",
+            "label": "Project Description",
             "type": "textarea",
-            "placeholder": "Some text for text area",
+            "placeholder": "Enter a detailed description of your project...",
             "defaultValue": "",
             "visible": true,
             "editable": true,
             "inputMode": "text",
             "options": [],
             "useSource": false,
-            "helperText": null,
+            "helperText": "Minimum 20 characters required for a valid description.",
             "labelOn": null,
             "labelOff": null,
             "mask": null,
@@ -391,8 +394,11 @@
             },
             "validation": {
                 "required": true,
+                "requiredError": "Project description cannot be empty",
                 "min": 20,
-                "max": 500
+                "minError": "Description is too short. Please provide at least 20 characters",
+                "max": 500,
+                "maxError": "Description is too long. Maximum limit is 500 characters"
             },
             "accessibility": {
                 "ariaLabel": "Long description of the project"
