@@ -400,7 +400,7 @@
         {
             "id": "f-10",
             "name": "projectDescription",
-            "label": "Project Description",
+            "label": "Textarea with min and max characters",
             "type": "textarea",
             "placeholder": "Enter a detailed description of your project...",
             "defaultValue": "",
@@ -479,6 +479,40 @@
             },
             "accessibility": {
                 "ariaLabel": "Toggle privacy"
+            },
+            "column": 1,
+            "offset": null
+        },
+        {
+            "id": "f-150",
+            "name": "priority",
+            "label": "Radio",
+            "type": "radio",
+            "helperText": "radio buttons from options array",
+            "defaultValue": false,
+            "labelOn": null,
+            "labelOff": null,
+            "visible": true,
+            "editable": true,
+            "mask": null,
+            "useSource": false,
+            "options": [
+                {
+                    "label": "Low",
+                    "value": "low"
+                },
+                {
+                    "label": "Medium",
+                    "value": "medium"
+                },
+                {
+                    "label": "High",
+                    "value": "high"
+                }
+            ],
+            "validation": {
+                "required": true,
+                "requiredError": "Please pick a level"
             },
             "column": 1,
             "offset": null

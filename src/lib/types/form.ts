@@ -8,7 +8,8 @@ export type FieldType =
   | "textarea"
   | "switch"
   | "search"
-  | "date";
+  | "date"
+  | "radio";
 
 export type DataSourceType = "static" | "api";
 
@@ -22,7 +23,7 @@ export interface FieldSource {
   url: string | null;
 }
 
-export interface ValidationConfig {
+export interface FieldValidation {
   required: boolean;
   requiredError?: string;
   min?: number;
@@ -61,7 +62,7 @@ export interface FieldConfig {
   options: FieldOption[];
   source: FieldSource;
   mask: string | null;
-  validation: ValidationConfig;
+  validation: FieldValidation;
   accessibility: AccessibilityConfig;
   column: number;
   offset: "left" | "right" | null;

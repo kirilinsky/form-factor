@@ -1,74 +1,71 @@
-import { FormConfig } from "../types/form";
 import { z } from "zod";
+import { FormConfig, FieldConfig, FieldValidation } from "../types/form";
+
+const buildBooleanSchema = (validation: FieldValidation) => {
+  const base = z.boolean();
+  if (validation.required) {
+    return base.refine((val) => val === true, {
+      message: validation.requiredError || "Required",
+    });
+  }
+  return base;
+};
+
+const buildSelectionSchema = (field: FieldConfig) => {
+  const { validation } = field;
+  const base = z.union([z.string(), z.boolean(), z.number()]).nullable();
+
+  if (validation.required) {
+    return base.refine(
+      (val) => val !== null && val !== undefined && val !== "",
+      {
+        message: validation.requiredError || "Selection is required",
+      },
+    );
+  }
+  return base.optional().or(z.literal(""));
+};
+
+const buildStringSchema = (field: FieldConfig) => {
+  const { validation } = field;
+  let s = z.string();
+
+  if (validation.min !== undefined) {
+    s = s.min(validation.min, validation.minError);
+  }
+  if (validation.max !== undefined) {
+    s = s.max(validation.max, validation.maxError);
+  }
+  if (validation.regex) {
+    s = s.regex(new RegExp(validation.regex), validation.regexError);
+  }
+
+  const finalSchema = validation.required
+    ? s.min(1, validation.requiredError || "Required")
+    : s.nullable().optional().or(z.literal(""));
+
+  return z.preprocess((val) => (val === null ? "" : val), finalSchema);
+};
 
 export function generateZodSchema(config: FormConfig) {
   const schemaObject: Record<string, z.ZodTypeAny> = {};
 
   config.fields.forEach((field) => {
-    const { validation, type } = field;
-    let shape: z.ZodTypeAny;
-
-    if (type === "checkbox" || type === "switch") {
-      shape = z.boolean();
-      if (validation.required) {
-        shape = (shape as z.ZodBoolean).refine((val) => val === true, {
-          message: validation.requiredError || "You must agree to continue",
-        });
-      }
-    } else if (type === "date" || type === "search" || type === "select") {
-      shape = z.string().nullable();
-
-      if (validation.required) {
-        shape = (shape as z.ZodString).refine(
-          (val) => !!val && val.length > 0,
-          {
-            message: validation.requiredError || "Selection is required",
-          },
-        );
-      } else {
-        shape = shape.optional().or(z.literal(""));
-      }
-    } else {
-      let stringShape = z.string();
-
-      if (validation.required) {
-        stringShape = stringShape.min(
-          1,
-          validation.requiredError || "This field is required",
-        );
-      } else {
-        stringShape = stringShape
-          .nullable()
-          .optional()
-          .or(z.literal("")) as any;
-      }
-
-      if (validation.min !== undefined) {
-        stringShape = stringShape.min(
-          validation.min,
-          validation.minError ||
-            `Minimum ${validation.min} characters required`,
-        );
-      }
-
-      if (validation.max !== undefined) {
-        stringShape = stringShape.max(
-          validation.max,
-          validation.maxError || `Maximum ${validation.max} characters allowed`,
-        );
-      }
-
-      if (validation.regex) {
-        stringShape = stringShape.regex(
-          new RegExp(validation.regex),
-          validation.regexError || "Invalid format",
-        );
-      }
-
-      shape = stringShape;
+    switch (field.type) {
+      case "checkbox":
+      case "switch":
+        schemaObject[field.name] = buildBooleanSchema(field.validation);
+        break;
+      case "date":
+      case "radio":
+      case "select":
+      case "search":
+        schemaObject[field.name] = buildSelectionSchema(field);
+        break;
+      default:
+        schemaObject[field.name] = buildStringSchema(field);
+        break;
     }
-
-    schemaObject[field.name] = shape;
   });
 
   return z.object(schemaObject);

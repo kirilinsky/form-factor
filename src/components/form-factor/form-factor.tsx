@@ -7,6 +7,7 @@ import { SwitchField } from "../custom/switch-field/switch-field";
 import { GridItemWrap } from "../custom/grid-wrap/grid-wrap";
 import { SearchField } from "../custom/search-field/search-field";
 import { DateField } from "../custom/date-field/date-field";
+import { RadioField } from "../custom/radio-field/radio-field";
 
 interface FormFactorProps {
   field: FieldConfig;
@@ -36,6 +37,8 @@ export const FormFactor = ({ field, columns }: FormFactorProps) => {
             return <SearchField field={field} />;
           case "date":
             return <DateField field={field} />;
+          case "radio":
+            return <RadioField field={field} />;
           default:
             return null;
         }
