@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import {
   Field,
@@ -17,34 +16,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Spinner } from "@/components/ui/spinner";
-import { FieldConfig, FieldOption } from "@/lib/types/form";
-import { fetchFieldOptions } from "@/lib/fetch-select-options/fetch-select-options";
+import { FieldConfig } from "@/lib/types/form";
+import { useGetField } from "@/hooks/use-get-fields/use-get-fields";
 
 export function SelectField({ field }: { field: FieldConfig }) {
   const { control } = useFormContext();
-  const [options, setOptions] = useState<FieldOption[]>(field.options || []);
-  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const shouldFetch =
-      field.useSource && field.source.type === "api" && field.source.url;
-
-    if (shouldFetch) {
-      const loadData = async () => {
-        setIsLoading(true);
-        try {
-          const data = await fetchFieldOptions(field);
-          setOptions(data);
-        } catch (error) {
-          console.error("SelectField load error:", error);
-        } finally {
-          setIsLoading(false);
-        }
-      };
-
-      loadData();
-    }
-  }, [field]); // Dependency on the whole field config
+  const { options, isLoading } = useGetField(field);
 
   return (
     <Controller
@@ -89,8 +67,7 @@ export function SelectField({ field }: { field: FieldConfig }) {
                 </SelectGroup>
               </SelectContent>
             </Select>
-          </FieldContent>
-
+          </FieldContent> 
           {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
         </Field>
       )}

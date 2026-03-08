@@ -1,0 +1,378 @@
+[
+    {
+        "label": "Afghanistan",
+        "value": "af"
+    },
+    {
+        "label": "Albania",
+        "value": "al"
+    },
+    {
+        "label": "Algeria",
+        "value": "dz"
+    },
+    {
+        "label": "Andorra",
+        "value": "ad"
+    },
+    {
+        "label": "Angola",
+        "value": "ao"
+    },
+    {
+        "label": "Argentina",
+        "value": "ar"
+    },
+    {
+        "label": "Armenia",
+        "value": "am"
+    },
+    {
+        "label": "Australia",
+        "value": "au"
+    },
+    {
+        "label": "Austria",
+        "value": "at"
+    },
+    {
+        "label": "Azerbaijan",
+        "value": "az"
+    },
+    {
+        "label": "Bahamas",
+        "value": "bs"
+    },
+    {
+        "label": "Bahrain",
+        "value": "bh"
+    },
+    {
+        "label": "Bangladesh",
+        "value": "bd"
+    },
+    {
+        "label": "Belarus",
+        "value": "by"
+    },
+    {
+        "label": "Belgium",
+        "value": "be"
+    },
+    {
+        "label": "Belize",
+        "value": "bz"
+    },
+    {
+        "label": "Benin",
+        "value": "bj"
+    },
+    {
+        "label": "Bolivia",
+        "value": "bo"
+    },
+    {
+        "label": "Bosnia and Herzegovina",
+        "value": "ba"
+    },
+    {
+        "label": "Brazil",
+        "value": "br"
+    },
+    {
+        "label": "Bulgaria",
+        "value": "bg"
+    },
+    {
+        "label": "Cambodia",
+        "value": "kh"
+    },
+    {
+        "label": "Cameroon",
+        "value": "cm"
+    },
+    {
+        "label": "Canada",
+        "value": "ca"
+    },
+    {
+        "label": "Chile",
+        "value": "cl"
+    },
+    {
+        "label": "China",
+        "value": "cn"
+    },
+    {
+        "label": "Colombia",
+        "value": "co"
+    },
+    {
+        "label": "Costa Rica",
+        "value": "cr"
+    },
+    {
+        "label": "Croatia",
+        "value": "hr"
+    },
+    {
+        "label": "Cyprus",
+        "value": "cy"
+    },
+    {
+        "label": "Czech Republic",
+        "value": "cz"
+    },
+    {
+        "label": "Denmark",
+        "value": "dk"
+    },
+    {
+        "label": "Dominican Republic",
+        "value": "do"
+    },
+    {
+        "label": "Ecuador",
+        "value": "ec"
+    },
+    {
+        "label": "Egypt",
+        "value": "eg"
+    },
+    {
+        "label": "Estonia",
+        "value": "ee"
+    },
+    {
+        "label": "Ethiopia",
+        "value": "et"
+    },
+    {
+        "label": "Finland",
+        "value": "fi"
+    },
+    {
+        "label": "France",
+        "value": "fr"
+    },
+    {
+        "label": "Georgia",
+        "value": "ge"
+    },
+    {
+        "label": "Germany",
+        "value": "de"
+    },
+    {
+        "label": "Greece",
+        "value": "gr"
+    },
+    {
+        "label": "Hungary",
+        "value": "hu"
+    },
+    {
+        "label": "Iceland",
+        "value": "is"
+    },
+    {
+        "label": "India",
+        "value": "in"
+    },
+    {
+        "label": "Indonesia",
+        "value": "id"
+    },
+    {
+        "label": "Ireland",
+        "value": "ie"
+    },
+    {
+        "label": "Israel",
+        "value": "il"
+    },
+    {
+        "label": "Italy",
+        "value": "it"
+    },
+    {
+        "label": "Japan",
+        "value": "jp"
+    },
+    {
+        "label": "Kazakhstan",
+        "value": "kz"
+    },
+    {
+        "label": "Kenya",
+        "value": "ke"
+    },
+    {
+        "label": "South Korea",
+        "value": "kr"
+    },
+    {
+        "label": "Latvia",
+        "value": "lv"
+    },
+    {
+        "label": "Lithuania",
+        "value": "lt"
+    },
+    {
+        "label": "Luxembourg",
+        "value": "lu"
+    },
+    {
+        "label": "Malaysia",
+        "value": "my"
+    },
+    {
+        "label": "Malta",
+        "value": "mt"
+    },
+    {
+        "label": "Mexico",
+        "value": "mx"
+    },
+    {
+        "label": "Moldova",
+        "value": "md"
+    },
+    {
+        "label": "Monaco",
+        "value": "mc"
+    },
+    {
+        "label": "Montenegro",
+        "value": "me"
+    },
+    {
+        "label": "Morocco",
+        "value": "ma"
+    },
+    {
+        "label": "Netherlands",
+        "value": "nl"
+    },
+    {
+        "label": "New Zealand",
+        "value": "nz"
+    },
+    {
+        "label": "Norway",
+        "value": "no"
+    },
+    {
+        "label": "Pakistan",
+        "value": "pk"
+    },
+    {
+        "label": "Panama",
+        "value": "pa"
+    },
+    {
+        "label": "Paraguay",
+        "value": "py"
+    },
+    {
+        "label": "Peru",
+        "value": "pe"
+    },
+    {
+        "label": "Philippines",
+        "value": "ph"
+    },
+    {
+        "label": "Poland",
+        "value": "pl"
+    },
+    {
+        "label": "Portugal",
+        "value": "pt"
+    },
+    {
+        "label": "Qatar",
+        "value": "qa"
+    },
+    {
+        "label": "Romania",
+        "value": "ro"
+    },
+    {
+        "label": "Russia",
+        "value": "ru"
+    },
+    {
+        "label": "Saudi Arabia",
+        "value": "sa"
+    },
+    {
+        "label": "Serbia",
+        "value": "rs"
+    },
+    {
+        "label": "Singapore",
+        "value": "sg"
+    },
+    {
+        "label": "Slovakia",
+        "value": "sk"
+    },
+    {
+        "label": "Slovenia",
+        "value": "si"
+    },
+    {
+        "label": "South Africa",
+        "value": "za"
+    },
+    {
+        "label": "Spain",
+        "value": "es"
+    },
+    {
+        "label": "Sweden",
+        "value": "se"
+    },
+    {
+        "label": "Switzerland",
+        "value": "ch"
+    },
+    {
+        "label": "Thailand",
+        "value": "th"
+    },
+    {
+        "label": "Turkey",
+        "value": "tr"
+    },
+    {
+        "label": "Ukraine",
+        "value": "ua"
+    },
+    {
+        "label": "United Arab Emirates",
+        "value": "ae"
+    },
+    {
+        "label": "United Kingdom",
+        "value": "gb"
+    },
+    {
+        "label": "United States",
+        "value": "us"
+    },
+    {
+        "label": "Uruguay",
+        "value": "uy"
+    },
+    {
+        "label": "Uzbekistan",
+        "value": "uz"
+    },
+    {
+        "label": "Vietnam",
+        "value": "vn"
+    }
+]

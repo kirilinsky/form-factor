@@ -224,6 +224,71 @@
             "offset": null
         },
         {
+            "id": "country-selector",
+            "name": "country",
+            "label": "Country (Static Search)",
+            "type": "search",
+            "placeholder": "Pick a country...",
+            "defaultValue": "rs",
+            "visible": true,
+            "editable": true,
+            "useSource": false,
+            "helperText": "Select your primary residence",
+            "options": [
+                {
+                    "label": "Germany",
+                    "value": "de"
+                },
+                {
+                    "label": "USA",
+                    "value": "us"
+                },
+                {
+                    "label": "France",
+                    "value": "fr"
+                },
+                {
+                    "label": "Serbia",
+                    "value": "rs"
+                },
+                {
+                    "label": "Japan",
+                    "value": "jp"
+                }
+            ],
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true
+            },
+            "column": 1,
+            "offset": null
+        },
+        {
+            "id": "country-lookup",
+            "name": "assigned_country",
+            "label": "Country (API Search)",
+            "type": "search",
+            "placeholder": "Search countries in database...",
+            "defaultValue": null,
+            "visible": true,
+            "editable": true,
+            "useSource": true,
+            "helperText": "Syncing with enterprise directory",
+            "options": [],
+            "source": {
+                "type": "api",
+                "url": "api/countries"
+            },
+            "validation": {
+                "required": false
+            },
+            "column": 2,
+            "offset": null
+        },
+        {
             "id": "f-6",
             "name": "checkboxDefault",
             "label": "Checkbox (Default False)",

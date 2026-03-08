@@ -6,7 +6,8 @@ export type FieldType =
   | "checkbox"
   | "tel"
   | "textarea"
-  | "switch";
+  | "switch"
+  | "search";
 
 export type DataSourceType = "static" | "api";
 
