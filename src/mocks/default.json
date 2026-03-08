@@ -356,7 +356,7 @@
             "inputMode": "text",
             "options": [],
             "useSource": false,
-            "helperText": null,
+            "helperText": "Disabled and you can not do anything about it",
             "labelOn": null,
             "labelOff": null,
             "source": {
@@ -368,6 +368,31 @@
             },
             "accessibility": {
                 "ariaLabel": "Disabled checkbox"
+            },
+            "column": 1,
+            "offset": null
+        },
+        {
+            "id": "f-117",
+            "name": "start_date",
+            "label": "Start Date",
+            "type": "date",
+            "placeholder": "Select a date...",
+            "defaultValue": null,
+            "visible": true,
+            "editable": true,
+            "helperText": "Some helper text...",
+            "useSource": false,
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true,
+                "requiredError": "Please specify the start date to proceed"
+            },
+            "accessibility": {
+                "ariaLabel": "Start date selector"
             },
             "column": 1,
             "offset": null

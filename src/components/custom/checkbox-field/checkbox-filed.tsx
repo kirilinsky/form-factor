@@ -1,7 +1,12 @@
 "use client";
 
 import { Controller, useFormContext } from "react-hook-form";
-import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import {
+  Field,
+  FieldError,
+  FieldLabel,
+  FieldDescription,
+} from "@/components/ui/field";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FieldConfig } from "@/lib/types/form";
 
@@ -33,6 +38,12 @@ export function CheckboxField({ field }: { field: FieldConfig }) {
                 <span className="text-destructive ml-1">*</span>
               )}
             </FieldLabel>
+
+            {field.helperText && (
+              <FieldDescription className="text-xs text-muted-foreground">
+                {field.helperText}
+              </FieldDescription>
+            )}
 
             {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
           </div>

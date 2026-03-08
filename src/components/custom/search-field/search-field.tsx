@@ -23,6 +23,7 @@ import {
   FieldContent,
   FieldLabel,
   FieldError,
+  FieldDescription,
 } from "@/components/ui/field";
 import { Spinner } from "@/components/ui/spinner";
 import { FieldConfig } from "@/lib/types/form";
@@ -33,6 +34,8 @@ export function SearchField({ field }: { field: FieldConfig }) {
   const { options, isLoading } = useGetField(field);
   const [open, setOpen] = useState(false);
 
+  const descriptionId = `${field.id}-description`;
+
   return (
     <Controller
       name={field.name}
@@ -41,6 +44,11 @@ export function SearchField({ field }: { field: FieldConfig }) {
         <Field data-invalid={fieldState.invalid}>
           <FieldContent>
             <FieldLabel htmlFor={field.id}>{field.label}</FieldLabel>
+            {field.helperText && (
+              <FieldDescription id={descriptionId}>
+                {field.helperText}
+              </FieldDescription>
+            )}
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
                 <Button

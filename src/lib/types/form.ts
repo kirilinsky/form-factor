@@ -7,7 +7,8 @@ export type FieldType =
   | "tel"
   | "textarea"
   | "switch"
-  | "search";
+  | "search"
+  | "date";
 
 export type DataSourceType = "static" | "api";
 

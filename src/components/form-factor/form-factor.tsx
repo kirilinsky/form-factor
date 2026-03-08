@@ -6,6 +6,7 @@ import { TextareaField } from "../custom/textarea-field/textarea-field";
 import { SwitchField } from "../custom/switch-field/switch-field";
 import { GridItemWrap } from "../custom/grid-wrap/grid-wrap";
 import { SearchField } from "../custom/search-field/search-field";
+import { DateField } from "../custom/date-field/date-field";
 
 interface FormFactorProps {
   field: FieldConfig;
@@ -33,6 +34,8 @@ export const FormFactor = ({ field, columns }: FormFactorProps) => {
             return <TextareaField field={field} />;
           case "search":
             return <SearchField field={field} />;
+          case "date":
+            return <DateField field={field} />;
           default:
             return null;
         }
