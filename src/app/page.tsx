@@ -24,7 +24,12 @@ export default function Home() {
   const FORM_ID = "form-factor-assembly";
 
   const handleMySubmit = (data: any) => {
-    console.log("Form Factor Output:", data);
+    console.group(
+      `%c 🚀 Form Factor Assembly submit V V V`,
+      "background: #222; color: #00ff00; padding: 14px; border-radius: 4px; font-weight: bold; border: 1px solid #444;",
+    );
+    console.table(data);
+   
   };
 
   useEffect(() => {
