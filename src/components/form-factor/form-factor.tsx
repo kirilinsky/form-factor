@@ -8,6 +8,8 @@ import { GridItemWrap } from "../custom/grid-wrap/grid-wrap";
 import { SearchField } from "../custom/search-field/search-field";
 import { DateField } from "../custom/date-field/date-field";
 import { RadioField } from "../custom/radio-field/radio-field";
+import { AutosuggestionField } from "../custom/autosuggestion-field/autosuggestion-field";
+import { FileField } from "../custom/file-field/file-field";
 
 interface FormFactorProps {
   field: FieldConfig;
@@ -25,6 +27,10 @@ export const FormFactor = ({ field, columns }: FormFactorProps) => {
           case "number":
           case "tel":
             return <TextField field={field} />;
+          case "autosuggestion":
+            return <AutosuggestionField field={field} />;
+          case "file":
+            return <FileField field={field} />;
           case "switch":
             return <SwitchField field={field} />;
           case "select":

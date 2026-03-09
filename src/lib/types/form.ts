@@ -7,9 +7,11 @@ export type FieldType =
   | "tel"
   | "textarea"
   | "switch"
+  | "file"
   | "search"
   | "date"
-  | "radio";
+  | "radio"
+  | "autosuggestion";
 
 export type DataSourceType = "static" | "api";
 
@@ -32,6 +34,13 @@ export interface FieldValidation {
   maxError?: string;
   regex?: string;
   regexError?: string;
+}
+
+export interface FileConfig {
+  multiple: boolean;
+  accept: string;
+  compact: boolean;
+  showUploadedPreview: boolean;
 }
 
 export interface AccessibilityConfig {
@@ -66,6 +75,7 @@ export interface FieldConfig {
   accessibility: AccessibilityConfig;
   column: number;
   offset: "left" | "right" | null;
+  fileConfig?: FileConfig;
 }
 
 export interface FormConfig {

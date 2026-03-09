@@ -28,8 +28,8 @@ export function DateField({ field }: { field: FieldConfig }) {
       name={field.name}
       control={control}
       render={({ field: { onChange, value }, fieldState }) => (
-        <Field data-invalid={fieldState.invalid}>
-          <FieldContent className="flex flex-col h-full">
+        <Field data-invalid={fieldState.invalid} className="h-full">
+          <FieldContent className="flex flex-col justify-evenly h-full">
             <FieldLabel htmlFor={field.id}>
               {field.label}
               {field.validation.required && (
@@ -37,9 +37,7 @@ export function DateField({ field }: { field: FieldConfig }) {
               )}
             </FieldLabel>
             {field.helperText && (
-              <FieldDescription className="mb-2">
-                {field.helperText}
-              </FieldDescription>
+              <FieldDescription>{field.helperText}</FieldDescription>
             )}
 
             <Popover>

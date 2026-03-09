@@ -3,37 +3,33 @@
     "formTitle": "Form Debug Mode",
     "fields": [
         {
-            "id": "f-9",
-            "name": "zipCode",
-            "label": "ZIP Code (Mask Test)",
-            "type": "text",
-            "placeholder": "000 000",
+            "id": "k19",
+            "name": "city",
+            "label": "Autosuggestion example (mocked)",
+            "type": "autosuggestion",
+            "placeholder": "city",
             "defaultValue": "",
             "visible": true,
             "editable": true,
-            "inputMode": "numeric",
+            "inputMode": "text",
             "options": [],
             "useSource": false,
             "helperText": null,
             "labelOn": null,
             "labelOff": null,
-            "mask": "### ###",
+            "mask": "",
             "source": {
                 "type": "static",
                 "url": null
             },
             "validation": {
                 "required": true,
-                "requiredError": "ZIP code is required to proceed",
-                "min": 6,
-                "minError": "ZIP code must be at least 6 characters",
-                "regex": "^[0-9]{6}$",
-                "regexError": "ZIP code must be exactly 6 digits (e.g., 110000)"
+                "requiredError": "City   is required to proceed"
             },
             "accessibility": {
-                "ariaLabel": "Zip code with mask"
+                "ariaLabel": "Mocked field"
             },
-            "column": 2,
+            "column": 1,
             "offset": null
         },
         {
@@ -65,6 +61,40 @@
                 "ariaLabel": "Text input"
             },
             "column": 1,
+            "offset": null
+        },
+        {
+            "id": "f-9",
+            "name": "zipCode",
+            "label": "ZIP Code (Mask Test)",
+            "type": "text",
+            "placeholder": "000 000",
+            "defaultValue": "",
+            "visible": true,
+            "editable": true,
+            "inputMode": "numeric",
+            "options": [],
+            "useSource": false,
+            "helperText": null,
+            "labelOn": null,
+            "labelOff": null,
+            "mask": "### ###",
+            "source": {
+                "type": "static",
+                "url": null
+            },
+            "validation": {
+                "required": true,
+                "requiredError": "ZIP code is required to proceed",
+                "min": 6,
+                "minError": "ZIP code must be at least 6 characters",
+                "regex": "^[0-9]{6}$",
+                "regexError": "ZIP code must be exactly 6 digits (e.g., 110000)"
+            },
+            "accessibility": {
+                "ariaLabel": "Zip code with mask"
+            },
+            "column": 2,
             "offset": null
         },
         {
@@ -490,6 +520,7 @@
             "type": "radio",
             "helperText": "radio buttons from options array",
             "defaultValue": false,
+            "placeholder": null,
             "labelOn": null,
             "labelOff": null,
             "visible": true,
@@ -515,6 +546,66 @@
                 "requiredError": "Please pick a level"
             },
             "column": 1,
+            "offset": null
+        },
+        {
+            "id": "b-12",
+            "name": "nice-files",
+            "label": "File input compact (single)",
+            "type": "file",
+            "helperText": "",
+            "defaultValue": false,
+            "placeholder": null,
+            "labelOn": null,
+            "labelOff": null,
+            "visible": true,
+            "editable": true,
+            "mask": null,
+            "useSource": false,
+            "options": [],
+            "validation": {
+                "required": true,
+                "requiredError": "Please upload at least one document",
+                "max": 5242880,
+                "maxError": "File is too large. Maximum size is 5MB"
+            },
+            "fileConfig": {
+                "multiple": false,
+                "accept": ".pdf,.png,.jpg,.jpeg",
+                "compact": true,
+                "showUploadedPreview": true
+            },
+            "column": 1,
+            "offset": null
+        },
+        {
+            "id": "b-13",
+            "name": "nice-files-too",
+            "label": "File input Drag and drop with preview",
+            "type": "file",
+            "helperText": "",
+            "defaultValue": false,
+            "placeholder": "click here or drag files",
+            "labelOn": null,
+            "labelOff": null,
+            "visible": true,
+            "editable": true,
+            "mask": null,
+            "useSource": false,
+            "options": [],
+            "validation": {
+                "required": true,
+                "requiredError": "Please upload at least one document",
+                "max": 5242880,
+                "maxError": "File is too large. Maximum size is 5MB"
+            },
+            "fileConfig": {
+                "multiple": true,
+                "accept": ".pdf,.png,.jpg,.jpeg",
+                "compact": false,
+                "showUploadedPreview": true
+            },
+            "column": 2,
             "offset": null
         }
     ]

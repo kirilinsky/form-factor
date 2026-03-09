@@ -23,8 +23,8 @@ export function TextField({ field }: { field: FieldConfig }) {
       name={field.name}
       control={control}
       render={({ field: { onChange, value, ...rhfField }, fieldState }) => (
-        <Field data-invalid={fieldState.invalid}>
-          <FieldContent>
+        <Field data-invalid={fieldState.invalid} className="h-full">
+          <FieldContent className="flex flex-col justify-evenly h-full">
             <FieldLabel htmlFor={field.id}>{field.label}</FieldLabel>
 
             {field.helperText && (

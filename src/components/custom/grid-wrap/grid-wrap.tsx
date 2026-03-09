@@ -24,6 +24,7 @@ export const GridItemWrap = ({
         ? "1 / -1"
         : `span ${actualColumnSpan}`,
     gridTemplateColumns: "subgrid",
+    height: "100%",
   };
 
   return (
